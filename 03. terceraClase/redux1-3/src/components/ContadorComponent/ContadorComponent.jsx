@@ -6,7 +6,7 @@ import { decrementCount, incrementCount, modifyName, multiplicarCount, saveName}
 const ContadorComponent = () => {
 //   const [count, setCount] = useState(0)
     const [name, setName ] = useState(undefined)
-    const [myName, setMyName] = useState(undefined)
+    const [myNameP, setMyNameP] = useState(undefined)
 
     const dispatch = useDispatch()
 
@@ -40,12 +40,12 @@ const ContadorComponent = () => {
 
       const lanzarMiNombre = () => {
         //TODO: fkeofkseofkeo
-        dispatch(saveName(name))
+        dispatch(saveName(myNameP))
     }
 
   return (
     <div>
-        <h1>Esto esta echo por: {myName}</h1>
+        <h1>Esto esta echo por: {myNameTitle}</h1>
         <hr />
         <h1>{countName} is {count}</h1>
         <button onClick={lanzarAccionIncrement}>
@@ -64,7 +64,7 @@ const ContadorComponent = () => {
         </div>
         <div>
          <span>Mi Nombre: </span>
-          <input type="text" onChange={(e) => setMyName(e.target.value)}/>
+          <input type="text" onChange={(e) => setMyNameP(e.target.value)}/>
           <button onClick={lanzarMiNombre}>Guardar mi Nombre</button>
         </div>
     </div>
